@@ -22,6 +22,7 @@ if __name__ == "__main__":
     )
 
     # llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+    # can be phi3, llama3.1, llama3, mistral
     llm = ChatOllama(model="phi3", base_url=ollama_api_url, api_key=ollama_api_key)
     chain = summary_prompt_template | llm | StrOutputParser()
     linkedin_data  = scrap_linkedin_profile(
